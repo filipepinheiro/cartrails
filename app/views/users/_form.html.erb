@@ -1,0 +1,65 @@
+<%= form_for(@user, :html => {:class => 'form-horizontal'}) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h6><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h6>
+      <% @user.errors.full_messages.each do |message| %>
+          <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <%= message %>
+          </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :name, :required => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :birthdate, :class => "control-label" %>
+    <div class="controls">
+      <%= f.date_select :birthdate, :required => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :address %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :credit_card, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :credit_card %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :phone %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => "control-label" %>
+    <div class="controls">
+      <%= f.email_field :email %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :password %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :newsletter, :class => "control-label" %>
+    <div class="controls">
+      <%= f.check_box :newsletter %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => "btn btn-primary"%>
+  </div>
+<% end %>
