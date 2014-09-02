@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831002547) do
+ActiveRecord::Schema.define(version: 20140902125644) do
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20140831002547) do
     t.integer  "stock"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -30,7 +34,6 @@ ActiveRecord::Schema.define(version: 20140831002547) do
     t.string   "phone"
     t.string   "email"
     t.string   "password"
-    t.string   "salt"
     t.boolean  "confirmed"
     t.boolean  "newsletter"
     t.datetime "created_at"
