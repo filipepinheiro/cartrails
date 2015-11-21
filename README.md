@@ -1,4 +1,4 @@
 cartrails
 =========
 
-A product selling base on ruby on rails.
+A custom made product selling platform based using ruby on rails.
